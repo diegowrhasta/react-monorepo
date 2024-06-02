@@ -7,13 +7,15 @@ export function App() {
       <TwitterFollowCard
         isFollowing
         username="midudev"
-        name="Miguel Angel"
-      />
+      >
+        Diego Balderrama
+      </TwitterFollowCard>
       <TwitterFollowCard
         isFollowing={false}
-        username="midudev"
-        name="Miguel Angel"
-      />
+        username="pheralb"
+      >
+        Samuel Quino
+      </TwitterFollowCard>
       <TwitterFollowCard
         isFollowing
         username="midudev"
@@ -21,7 +23,6 @@ export function App() {
       />
       <TwitterFollowCard
         isFollowing={true}
-        username="midudev"
         name="Miguel Angel"
       />
     </section>

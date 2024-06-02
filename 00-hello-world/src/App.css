@@ -33,6 +33,23 @@ article {
             border-radius: 999px;
             padding: 6px 16px;
             font-weight: bold;
+            cursor: pointer;
+            border: 1px solid #000;
+
+            &.tw-followCard-button {
+                &:hover {
+                    background-color: #ddd;
+                    transition: .3s ease background-color;
+                }
+
+                &.is-following {
+                    border: 1px solid red;
+                    &:hover {
+                        background: red;
+                    }
+                    
+                }
+            }
         }
     }
 }
