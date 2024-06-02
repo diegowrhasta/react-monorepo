@@ -14,13 +14,6 @@ export function App() {
       >
         Samuel Quino
       </TwitterFollowCard>
-      <TwitterFollowCard
-        username="midudev"
-        name="Miguel Angel"
-      />
-      <TwitterFollowCard
-        name="Miguel Angel"
-      />
     </section>
   );
 }
