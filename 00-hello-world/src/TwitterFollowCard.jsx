@@ -5,10 +5,11 @@ export function TwitterFollowCard({
   // eslint-disable-next-line react/prop-types
   username = 'unknown',
   // eslint-disable-next-line react/prop-types
+  initialIsFollowing,
   // eslint-disable-next-line react/prop-types
   children,
 }) {
-  const [isFollowing, setIsFollowing] = useState(false);
+  const [isFollowing, setIsFollowing] = useState(initialIsFollowing);
   const handleClick = () => {
     setIsFollowing(!isFollowing);
   };
@@ -38,6 +39,7 @@ export function TwitterFollowCard({
           className={buttonClassName}
         >
           {text}
+          <span className='tw-followCard-stopFollow'>Unfollow</span>
         </button>
       </aside>
     </article>
