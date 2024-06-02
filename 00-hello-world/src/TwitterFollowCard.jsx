@@ -1,13 +1,18 @@
+import { useState } from 'react';
 import './App.css';
 
 export function TwitterFollowCard({
   // eslint-disable-next-line react/prop-types
   username = 'unknown',
   // eslint-disable-next-line react/prop-types
-  isFollowing,
   // eslint-disable-next-line react/prop-types
   children,
 }) {
+  const [isFollowing, setIsFollowing] = useState(false);
+  const handleClick = () => {
+    setIsFollowing(!isFollowing);
+  };
+
   const imageSrc = `https://unavatar.io/${username}`;
   const text = isFollowing ? 'Following' : 'Follow';
   const buttonClassName = isFollowing
@@ -28,7 +33,12 @@ export function TwitterFollowCard({
         </div>
       </header>
       <aside>
-        <button className={buttonClassName}>{text}</button>
+        <button
+          onClick={handleClick}
+          className={buttonClassName}
+        >
+          {text}
+        </button>
       </aside>
     </article>
   );
