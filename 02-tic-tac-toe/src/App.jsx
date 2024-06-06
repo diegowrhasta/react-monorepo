@@ -1,7 +1,9 @@
 import { useState } from 'react';
+import confetti from 'canvas-confetti';
+
 import { Square } from './components/Square';
 import { WinnerModal } from './components/WinnerModal';
-import { checkWinner } from './logic/board';
+import { checkWinner, checkEndGame } from './logic/board';
 import { TURNS } from './constants';
 import './App.css';
 
@@ -9,10 +11,6 @@ function App() {
   const [board, setBoard] = useState(Array(9).fill(null));
   const [turn, setTurn] = useState(TURNS.X);
   const [winner, setWinner] = useState(null);
-
-  const checkEndGame = (newBoard) => {
-    return newBoard.every((square) => square !== null);
-  };
 
   const updateBoard = (index) => {
     if (board[index] || winner) return;
@@ -25,6 +23,7 @@ function App() {
     setTurn(newTurn);
     const newWinner = checkWinner(newBoard);
     if (newWinner) {
+      confetti();
       setWinner(newWinner);
     } else if (checkEndGame(newBoard)) {
       setWinner(false);
